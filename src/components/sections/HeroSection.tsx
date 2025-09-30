@@ -36,7 +36,7 @@ export function HeroSection() {
               alt={`DALINK'S NIGERIA LTD Professional Services ${index + 1}`}
               className="w-full h-full object-cover object-center sm:object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/85 to-navy/75" />
+            <div className="absolute inset-0 bg-gradient-to-r from-navy/98 via-navy/95 to-navy/90" />
           </div>
         ))}
       </div>
@@ -65,17 +65,17 @@ export function HeroSection() {
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           {/* Content */}
           <div className="flex-1 text-center lg:text-left space-y-6 md:space-y-8">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight drop-shadow-lg">
-              <span className="block text-shadow-lg">NDPA Compliance</span>
-              <span className="block text-trust animate-fade-in text-shadow-lg" style={{animationDelay: '0.5s'}}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight" style={{textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 8px rgba(0,0,0,0.6)'}}>
+              <span className="block">NDPA Compliance</span>
+              <span className="block text-trust animate-fade-in" style={{animationDelay: '0.5s'}}>
                 Made Simple
               </span>
-              <span className="block text-sm md:text-base lg:text-lg font-normal text-navy-100 mt-2 drop-shadow-md">
+              <span className="block text-sm md:text-base lg:text-lg font-normal text-navy-100 mt-2" style={{textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>
                 Your Trusted Data Protection Partner
               </span>
             </h1>
             
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-navy-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-fade-in drop-shadow-md" style={{animationDelay: '1s'}}>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-navy-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-fade-in" style={{animationDelay: '1s', textShadow: '1px 1px 3px rgba(0,0,0,0.8)'}}>
               DALINK'S NIGERIA LTD specializes in comprehensive NDPA 2023 compliance solutions. 
               From risk assessments to full implementation, we ensure your business meets all data protection requirements.
             </p>
