@@ -1,6 +1,6 @@
 import { MegaMenu } from "@/components/navigation/MegaMenu";
 import { Button } from "@/components/ui/button";
-import { Shield } from "lucide-react";
+import dalinksLogo from "@/assets/dalinks-logo.png";
 
 export function Header() {
   return (
@@ -10,8 +10,11 @@ export function Header() {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="relative">
-              <Shield className="h-7 w-7 md:h-8 md:w-8 text-trust" />
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-success rounded-full animate-pulse" />
+              <img 
+                src={dalinksLogo} 
+                alt="DALINK'S NIGERIA LTD Logo" 
+                className="h-8 w-8 md:h-10 md:w-10 object-contain"
+              />
             </div>
             <div className="hidden sm:block">
               <h1 className="text-lg md:text-xl font-bold text-navy">DALINK'S NIGERIA LTD</h1>

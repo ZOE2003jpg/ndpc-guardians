@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Shield, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import dalinksLogo from "@/assets/dalinks-logo.png";
 
 export function Footer() {
   return (
@@ -10,7 +11,11 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <Shield className="h-6 w-6 text-accent" />
+              <img 
+                src={dalinksLogo} 
+                alt="DALINK'S NIGERIA LTD Logo" 
+                className="h-6 w-6 object-contain"
+              />
               <span className="text-lg font-bold">DALINK'S NIGERIA LTD</span>
             </div>
             <p className="text-sm text-primary-foreground/80 leading-relaxed">

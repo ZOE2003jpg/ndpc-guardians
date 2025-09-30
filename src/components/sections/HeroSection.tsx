@@ -1,10 +1,45 @@
 import { Button } from "@/components/ui/button";
 import { Shield, Download, CheckCircle2, Phone } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
+import { useState, useEffect } from "react";
+import heroBg1 from "@/assets/hero-bg-1.jpg";
+import heroBg2 from "@/assets/hero-bg-2.jpg";
+import heroBg3 from "@/assets/hero-bg-3.jpg";
+
+const heroImages = [heroBg1, heroBg2, heroBg3];
 
 export function HeroSection() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-navy via-navy/95 to-navy/90 text-white overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden">
+      {/* Background Image Carousel */}
+      <div className="absolute inset-0">
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <img 
+              src={image} 
+              alt={`DALINK'S NIGERIA LTD Professional Services ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/50" />
+          </div>
+        ))}
+      </div>
       {/* Floating Background Elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-20 left-10 text-[120px] md:text-[200px] font-bold text-white/[0.02] animate-float select-none">D</div>
@@ -26,7 +61,7 @@ export function HeroSection() {
         <div className="absolute bottom-1/3 right-1/4 w-1 h-1 bg-success/35 rounded-full animate-bounce" style={{animationDelay: '0.5s', animationDuration: '4.5s'}} />
       </div>
 
-      <div className="relative container mx-auto px-4 py-16 md:py-24 lg:py-32">
+      <div className="relative container mx-auto px-4 py-16 md:py-24 lg:py-32 text-white">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           {/* Content */}
           <div className="flex-1 text-center lg:text-left space-y-6 md:space-y-8">
@@ -80,22 +115,30 @@ export function HeroSection() {
             </div>
           </div>
           
-          {/* Hero Image */}
+          {/* Image Indicators */}
           <div className="flex-1 max-w-md lg:max-w-lg xl:max-w-xl animate-fade-in" style={{animationDelay: '1s'}}>
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-trust to-success rounded-3xl blur-2xl opacity-30 animate-pulse" />
-              <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
-                <img 
-                  src={heroImage} 
-                  alt="DALINK'S NIGERIA LTD - Professional data protection and compliance services" 
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-center">
-                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-white/20">
-                    <Shield className="h-12 w-12 md:h-16 md:w-16 text-trust mx-auto mb-3" />
-                    <h3 className="text-lg md:text-xl font-bold mb-2">End-to-End NDPA Solutions</h3>
-                    <p className="text-sm text-navy-100">Comprehensive compliance services across Osun, Abuja & Lagos</p>
+              <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-white/20 shadow-2xl">
+                <div className="text-center space-y-4 md:space-y-6">
+                  <Shield className="h-16 w-16 md:h-20 md:w-20 text-trust mx-auto" />
+                  <h3 className="text-xl md:text-2xl font-bold">End-to-End NDPA Solutions</h3>
+                  <p className="text-sm text-navy-100 mb-4">
+                    Comprehensive compliance services across Osun, Abuja & Lagos
+                  </p>
+                  
+                  {/* Image Indicators */}
+                  <div className="flex justify-center space-x-2">
+                    {heroImages.map((_, index) => (
+                      <div
+                        key={index}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                          index === currentImageIndex 
+                            ? 'bg-trust w-8' 
+                            : 'bg-white/30'
+                        }`}
+                      />
+                    ))}
                   </div>
                 </div>
               </div>
