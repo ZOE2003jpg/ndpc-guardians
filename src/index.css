@@ -59,46 +59,167 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 217 33% 6%;
-    --foreground: 0 0% 98%;
-
-    --card: 217 33% 8%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 217 33% 8%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 217 91% 60%; /* Lighter Navy for dark mode */
-    --primary-foreground: 217 33% 6%;
-
-    --secondary: 217 20% 15%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 217 20% 15%;
-    --muted-foreground: 217 10% 70%;
-
-    --accent: 184 81% 45%; /* Brighter Teal for dark mode */
-    --accent-foreground: 217 33% 6%;
-
-    --trust: 142 76% 50%;
-    --trust-foreground: 217 33% 6%;
-
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  /* Custom animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
   }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 640px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    
+    /* Ensure touch targets are large enough */
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Improve text readability on mobile */
+    h1 { font-size: clamp(1.75rem, 8vw, 4rem); }
+    h2 { font-size: clamp(1.5rem, 6vw, 3rem); }
+    h3 { font-size: clamp(1.25rem, 5vw, 2rem); }
+    p { font-size: clamp(0.875rem, 4vw, 1.125rem); }
+  }
+
+  /* Backdrop blur fallback */
+  .backdrop-blur-fallback {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  @supports (backdrop-filter: blur(10px)) {
+    .backdrop-blur-fallback {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+  }
+
+  /* Floating elements positioning */
+  .floating-letter {
+    position: absolute;
+    font-weight: bold;
+    user-select: none;
+    pointer-events: none;
+    opacity: 0.05;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Grid background pattern */
+  .bg-grid-white\/5 {
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* Card hover effects */
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+}
+
+.dark {
+  --background: 217 33% 6%;
+  --foreground: 0 0% 98%;
+
+  --card: 217 33% 8%;
+  --card-foreground: 0 0% 98%;
+
+  --popover: 217 33% 8%;
+  --popover-foreground: 0 0% 98%;
+
+  --primary: 217 91% 60%; /* Lighter Navy for dark mode */
+  --primary-foreground: 217 33% 6%;
+
+  --secondary: 217 20% 15%;
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 217 20% 15%;
+  --muted-foreground: 217 10% 70%;
+
+  --accent: 184 81% 45%; /* Brighter Teal for dark mode */
+  --accent-foreground: 217 33% 6%;
+
+  --trust: 142 76% 50%;
+  --trust-foreground: 217 33% 6%;
+
+  --destructive: 0 62% 50%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+  --sidebar-background: 240 5.9% 10%;
+  --sidebar-foreground: 240 4.8% 95.9%;
+  --sidebar-primary: 224.3 76.3% 48%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 240 3.7% 15.9%;
+  --sidebar-accent-foreground: 240 4.8% 95.9%;
+  --sidebar-border: 240 3.7% 15.9%;
+  --sidebar-ring: 217.2 91.2% 59.8%;
 }
 
 @layer base {

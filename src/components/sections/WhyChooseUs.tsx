@@ -30,42 +30,60 @@ const features = [
 
 export function WhyChooseUs() {
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+    <section className="relative py-16 md:py-20 bg-background overflow-hidden">
+      {/* Floating Background Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 left-5 text-[80px] md:text-[120px] font-bold text-navy/5 animate-pulse select-none" style={{animationDelay: '0.5s'}}>O</div>
+        <div className="absolute bottom-20 right-5 text-[90px] md:text-[140px] font-bold text-navy/5 animate-pulse select-none" style={{animationDelay: '2s'}}>A</div>
+      </div>
+      
+      <div className="relative container mx-auto px-4">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-navy mb-4 md:mb-6">
             What Makes Us the Authority in NDPA Compliance?
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Proven expertise, certified professionals, and measurable results for Nigerian businesses
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {features.map((feature) => (
-            <Card key={feature.title} className="text-center hover:shadow-lg transition-all duration-300 border-border/50">
-              <CardHeader className="pb-4">
-                <div className="flex justify-center mb-4">
-                  <feature.icon className={`h-12 w-12 ${feature.color}`} />
-                </div>
-                <CardTitle className="text-lg">{feature.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-sm leading-relaxed">
-                  {feature.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12 md:mb-16">
+          {features.map((feature, index) => (
+            <div 
+              key={feature.title}
+              className="animate-fade-in"
+              style={{animationDelay: `${index * 0.1}s`}}
+            >
+              <Card className="h-full text-center shadow-lg border-2 border-transparent transform transition-all duration-300 bg-white/50 backdrop-blur-sm">
+                <CardHeader className="pb-4">
+                  <div className="flex justify-center mb-4">
+                    <div className="p-3 bg-trust/10 rounded-xl">
+                      <feature.icon className={`h-10 w-10 md:h-12 md:w-12 ${feature.color}`} />
+                    </div>
+                  </div>
+                  <CardTitle className="text-lg md:text-xl">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-sm md:text-base leading-relaxed">
+                    {feature.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </div>
           ))}
         </div>
         
-        <div className="max-w-2xl mx-auto">
-          <Card className="bg-accent/5 border-accent/20">
-            <CardContent className="p-8 text-center">
-              <blockquote className="text-lg italic text-foreground mb-4">
-                "Thanks to [Your Firm], we achieved NDPA compliance three months ahead of deadline with zero audit issues."
-              </blockquote>
-              <cite className="text-sm text-muted-foreground font-medium">
+        <div className="max-w-2xl mx-auto animate-fade-in" style={{animationDelay: '0.4s'}}>
+          <Card className="bg-gradient-to-r from-trust/5 to-success/5 border-trust/20 shadow-xl">
+            <CardContent className="p-6 md:p-8 text-center">
+              <div className="relative">
+                <div className="absolute -top-2 -left-2 text-4xl text-trust/20">"</div>
+                <blockquote className="text-lg md:text-xl italic text-foreground mb-4 px-4">
+                  Thanks to NDPA Guardians, we achieved NDPA compliance three months ahead of deadline with zero audit issues.
+                </blockquote>
+                <div className="absolute -bottom-2 -right-2 text-4xl text-trust/20">"</div>
+              </div>
+              <cite className="text-sm md:text-base text-muted-foreground font-medium">
                 — CISO, Nigerian Fintech
               </cite>
             </CardContent>
