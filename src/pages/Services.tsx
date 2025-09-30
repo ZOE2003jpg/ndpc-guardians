@@ -2,7 +2,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, Users, FileText, Database, Settings, Package } from "lucide-react";
+import { Shield, Users, FileText, Database, Settings, Package, Code } from "lucide-react";
 
 const services = [
   {
@@ -39,6 +39,13 @@ const services = [
     description: "Implementation of technology solutions to automate and streamline compliance processes.",
     features: ["Privacy management platforms", "Consent management tools", "Data mapping software", "Monitoring dashboards"],
     href: "/tools"
+  },
+  {
+    icon: Code,
+    title: "Web Development",
+    description: "Custom web solutions built with security and compliance at their core, ensuring NDPA readiness.",
+    features: ["Secure web applications", "Compliance-ready platforms", "Data protection integration", "Modern responsive design"],
+    href: "/web-development"
   },
   {
     icon: Package,
