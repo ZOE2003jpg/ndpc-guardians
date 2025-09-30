@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Shield, Download, CheckCircle2, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import heroBg1 from "@/assets/hero-bg-1.jpg";
 import heroBg2 from "@/assets/hero-bg-2.jpg";
 import heroBg3 from "@/assets/hero-bg-3.jpg";
+import heroBg4 from "@/assets/hero-bg-4.jpg";
 
-const heroImages = [heroBg1, heroBg2, heroBg3];
+const heroImages = [heroBg1, heroBg2, heroBg3, heroBg4];
 
 export function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -81,13 +83,15 @@ export function HeroSection() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in" style={{animationDelay: '1.5s'}}>
-              <Button 
-                size="lg" 
-                className="bg-accent text-accent-foreground text-base md:text-lg px-6 md:px-8 py-4 md:py-6 h-auto shadow-lg transform transition-transform duration-200 hover:scale-105"
-              >
-                <Phone className="mr-2 h-5 w-5" />
-                👉 Book Free Compliance Assessment
-              </Button>
+              <Link to="/resources/assessment">
+                <Button 
+                  size="lg" 
+                  className="bg-accent text-accent-foreground text-base md:text-lg px-6 md:px-8 py-4 md:py-6 h-auto shadow-lg transform transition-transform duration-200 hover:scale-105"
+                >
+                  <Phone className="mr-2 h-5 w-5" />
+                  👉 Book Free Compliance Assessment
+                </Button>
+              </Link>
             </div>
             
             {/* Trust Badges */}

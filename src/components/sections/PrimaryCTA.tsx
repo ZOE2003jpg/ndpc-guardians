@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield, Phone, FileText } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function PrimaryCTA() {
   return (
@@ -23,21 +24,25 @@ export function PrimaryCTA() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Button 
-                size="lg" 
-                className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 h-auto"
-              >
-                <Phone className="mr-2 h-5 w-5" />
-                👉 Book Free NDPA Consultation
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-primary-foreground/30 text-primary-foreground text-lg px-8 py-6 h-auto"
-              >
-                <FileText className="mr-2 h-5 w-5" />
-                Request Proposal Document →
-              </Button>
+              <Link to="/contact">
+                <Button 
+                  size="lg" 
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 h-auto"
+                >
+                  <Phone className="mr-2 h-5 w-5" />
+                  👉 Book Free NDPA Consultation
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-8 py-6 h-auto"
+                >
+                  <FileText className="mr-2 h-5 w-5" />
+                  Request Proposal Document →
+                </Button>
+              </Link>
             </div>
             
             <div className="text-sm text-primary-foreground/80">
