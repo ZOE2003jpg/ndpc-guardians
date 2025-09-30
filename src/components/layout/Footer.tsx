@@ -11,7 +11,7 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <Shield className="h-6 w-6 text-accent" />
-              <span className="text-lg font-bold">NDPC Compliance</span>
+              <span className="text-lg font-bold">DALINK'S NIGERIA LTD</span>
             </div>
             <p className="text-sm text-primary-foreground/80 leading-relaxed">
               Nigeria's leading NDPA compliance consultancy, delivering certified solutions 
@@ -20,15 +20,15 @@ export function Footer() {
             <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-accent" />
-                <span>+234 800 NDPA HELP</span>
+                <span>+234 905 0500 166</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-accent" />
-                <span>info@ndpacompliance.ng</span>
+                <span>info@dalinksnigltd.ng</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-accent" />
-                <span>Lagos • Abuja • Port Harcourt</span>
+                <span>Osun • Abuja • Lagos</span>
               </div>
             </div>
           </div>
@@ -92,7 +92,7 @@ export function Footer() {
               <a href="/legal" className="transition-colors">Legal Notice</a>
             </div>
             <div className="text-sm text-primary-foreground/80">
-              © 2024 NDPC Compliance. All rights reserved.
+              © 2024 DALINK'S NIGERIA LTD. All rights reserved.
             </div>
           </div>
         </div>

@@ -14,8 +14,8 @@ export function Header() {
               <div className="absolute -top-1 -right-1 w-3 h-3 bg-success rounded-full animate-pulse" />
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-lg md:text-xl font-bold text-navy">NDPA Guardians</h1>
-              <p className="text-xs md:text-sm text-muted-foreground">Compliance Experts</p>
+              <h1 className="text-lg md:text-xl font-bold text-navy">DALINK'S NIGERIA LTD</h1>
+              <p className="text-xs md:text-sm text-muted-foreground">Data Protection Experts</p>
             </div>
           </div>
           
