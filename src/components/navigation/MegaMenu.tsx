@@ -70,7 +70,7 @@ export function MegaMenu() {
     <NavigationMenu>
       <NavigationMenuList className="space-x-2">
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="bg-transparent hover:bg-accent/10">
+          <NavigationMenuTrigger className="bg-transparent">
             Services
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -79,7 +79,7 @@ export function MegaMenu() {
                 <NavigationMenuLink key={service.href} asChild>
                   <a
                     className={cn(
-                      "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                      "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors"
                     )}
                     href={service.href}
                   >

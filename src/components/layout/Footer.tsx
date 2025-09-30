@@ -37,13 +37,13 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="font-semibold text-accent">Quick Links</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/" className="hover:text-accent transition-colors">Home</a></li>
-              <li><a href="/services" className="hover:text-accent transition-colors">Services</a></li>
-              <li><a href="/ndpa" className="hover:text-accent transition-colors">NDPA Guide</a></li>
-              <li><a href="/insights" className="hover:text-accent transition-colors">Insights</a></li>
-              <li><a href="/case-studies" className="hover:text-accent transition-colors">Case Studies</a></li>
-              <li><a href="/about" className="hover:text-accent transition-colors">About</a></li>
-              <li><a href="/contact" className="hover:text-accent transition-colors">Contact</a></li>
+              <li><a href="/" className="transition-colors">Home</a></li>
+              <li><a href="/services" className="transition-colors">Services</a></li>
+              <li><a href="/ndpa" className="transition-colors">NDPA Guide</a></li>
+              <li><a href="/insights" className="transition-colors">Insights</a></li>
+              <li><a href="/case-studies" className="transition-colors">Case Studies</a></li>
+              <li><a href="/about" className="transition-colors">About</a></li>
+              <li><a href="/contact" className="transition-colors">Contact</a></li>
             </ul>
           </div>
 
@@ -51,12 +51,12 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="font-semibold text-accent">Resources</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/resources/checklist" className="hover:text-accent transition-colors">NDPA Checklist</a></li>
-              <li><a href="/resources/whitepapers" className="hover:text-accent transition-colors">Whitepapers</a></li>
-              <li><a href="/resources/webinars" className="hover:text-accent transition-colors">Webinars</a></li>
-              <li><a href="/resources/faqs" className="hover:text-accent transition-colors">FAQs</a></li>
-              <li><a href="/resources/assessment" className="hover:text-accent transition-colors">Self-Assessment Tool</a></li>
-              <li><a href="/resources/templates" className="hover:text-accent transition-colors">Compliance Templates</a></li>
+              <li><a href="/resources/checklist" className="transition-colors">NDPA Checklist</a></li>
+              <li><a href="/resources/whitepapers" className="transition-colors">Whitepapers</a></li>
+              <li><a href="/resources/webinars" className="transition-colors">Webinars</a></li>
+              <li><a href="/resources/faqs" className="transition-colors">FAQs</a></li>
+              <li><a href="/resources/assessment" className="transition-colors">Self-Assessment Tool</a></li>
+              <li><a href="/resources/templates" className="transition-colors">Compliance Templates</a></li>
             </ul>
           </div>
 
@@ -74,7 +74,7 @@ export function Footer() {
               />
               <Button 
                 size="sm" 
-                className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
+                className="w-full bg-accent text-accent-foreground"
               >
                 Subscribe Today
               </Button>
@@ -86,10 +86,10 @@ export function Footer() {
         <div className="border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex flex-wrap gap-4 text-sm">
-              <a href="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</a>
-              <a href="/cookie-policy" className="hover:text-accent transition-colors">Cookie Policy</a>
-              <a href="/terms" className="hover:text-accent transition-colors">Terms & Conditions</a>
-              <a href="/legal" className="hover:text-accent transition-colors">Legal Notice</a>
+              <a href="/privacy-policy" className="transition-colors">Privacy Policy</a>
+              <a href="/cookie-policy" className="transition-colors">Cookie Policy</a>
+              <a href="/terms" className="transition-colors">Terms & Conditions</a>
+              <a href="/legal" className="transition-colors">Legal Notice</a>
             </div>
             <div className="text-sm text-primary-foreground/80">
               © 2024 NDPC Compliance. All rights reserved.

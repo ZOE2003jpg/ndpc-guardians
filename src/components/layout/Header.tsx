@@ -22,7 +22,7 @@ export function Header() {
             <Button variant="ghost" size="sm" className="hidden md:inline-flex">
               📞 Emergency Hotline
             </Button>
-            <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Button size="sm" className="bg-accent text-accent-foreground">
               Book Consultation
             </Button>
           </div>
