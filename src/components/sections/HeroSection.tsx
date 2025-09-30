@@ -15,7 +15,7 @@ export function HeroSection() {
       setCurrentImageIndex((prevIndex) => 
         prevIndex === heroImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 4000);
+    }, 6000);
 
     return () => clearInterval(interval);
   }, []);
@@ -27,16 +27,16 @@ export function HeroSection() {
         {heroImages.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+            className={`absolute inset-0 transition-opacity duration-2000 ease-in-out ${
               index === currentImageIndex ? 'opacity-100' : 'opacity-0'
             }`}
           >
             <img 
               src={image} 
               alt={`DALINK'S NIGERIA LTD Professional Services ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center sm:object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/70 to-navy/50" />
+            <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/85 to-navy/75" />
           </div>
         ))}
       </div>
@@ -65,17 +65,17 @@ export function HeroSection() {
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
           {/* Content */}
           <div className="flex-1 text-center lg:text-left space-y-6 md:space-y-8">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-              <span className="block">NDPA Compliance</span>
-              <span className="block text-trust animate-fade-in" style={{animationDelay: '0.5s'}}>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight drop-shadow-lg">
+              <span className="block text-shadow-lg">NDPA Compliance</span>
+              <span className="block text-trust animate-fade-in text-shadow-lg" style={{animationDelay: '0.5s'}}>
                 Made Simple
               </span>
-              <span className="block text-sm md:text-base lg:text-lg font-normal text-navy-100 mt-2">
+              <span className="block text-sm md:text-base lg:text-lg font-normal text-navy-100 mt-2 drop-shadow-md">
                 Your Trusted Data Protection Partner
               </span>
             </h1>
             
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-navy-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-fade-in" style={{animationDelay: '1s'}}>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-navy-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-fade-in drop-shadow-md" style={{animationDelay: '1s'}}>
               DALINK'S NIGERIA LTD specializes in comprehensive NDPA 2023 compliance solutions. 
               From risk assessments to full implementation, we ensure your business meets all data protection requirements.
             </p>
@@ -83,18 +83,10 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in" style={{animationDelay: '1.5s'}}>
               <Button 
                 size="lg" 
-                className="bg-accent text-accent-foreground text-base md:text-lg px-6 md:px-8 py-4 md:py-6 h-auto shadow-lg transform transition-transform duration-200"
+                className="bg-accent text-accent-foreground text-base md:text-lg px-6 md:px-8 py-4 md:py-6 h-auto shadow-lg transform transition-transform duration-200 hover:scale-105"
               >
                 <Phone className="mr-2 h-5 w-5" />
                 👉 Book Free Compliance Assessment
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-primary-foreground/30 text-primary-foreground text-base md:text-lg px-6 md:px-8 py-4 md:py-6 h-auto shadow-lg transform transition-transform duration-200"
-              >
-                <Download className="mr-2 h-5 w-5" />
-                📄 Download NDPA Compliance Checklist
               </Button>
             </div>
             
