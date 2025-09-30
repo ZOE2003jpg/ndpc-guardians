@@ -33,7 +33,7 @@ export function PrimaryCTA() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 text-lg px-8 py-6 h-auto"
+                className="border-primary-foreground/30 text-primary-foreground text-lg px-8 py-6 h-auto"
               >
                 <FileText className="mr-2 h-5 w-5" />
                 Request Proposal Document →
